@@ -10,6 +10,7 @@ export default (database: string) => {
 
       .then(() => console.log(`Database connection successful.....`))
       .catch((error) => {
+        console.log(database)
         console.log("Unable to connect to the db: " + error.message);
         return process.exit(1);
       });

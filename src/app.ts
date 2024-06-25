@@ -5,8 +5,7 @@ import helmet from "helmet";
 import bodyParser from "body-parser";
 import connectorDb from "./Helper/Dbconnector";
 import * as dotenv from "dotenv";
-import PostRoute from "./Routes/PostRoute";
-import UserRoute from "./Routes/UserRoute";
+import EventRoute from "./Routes/EventRoute";
 import morgan from "morgan";
 
 dotenv.config();
@@ -16,16 +15,13 @@ app.use(bodyParser.json());
 //morgan used for logging
 // app.use(morgan("dev"));
 app.use(morgan<Request, Response>("dev"));
-
+console.log("db: ", process.env.SERVER_PORT)
 const dbConnectionString: string = process.env.DB_CONNECION ?? "";
-const server_port = process.env.SERVER_PORT ?? "";
+const server_port = process.env.DB_CONNECION ?? "";
 
 connectorDb(dbConnectionString);
 
-//user route
-app.use("/user", UserRoute);
-//post route
-app.use("/post", PostRoute);
+app.use("/event", EventRoute)
 
 //404 response
 app.use((error: any, res: Response, next: NextFunction) => {
@@ -50,7 +46,7 @@ app.use((error: any, res: Response, next: NextFunction) => {
     next(error);
   }
 });
-const port = server_port || 5000;
+const port =  5000;
 app.listen(port, () => {
   console.log(`Application started on ${port}...`);
 });

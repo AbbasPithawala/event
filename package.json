@@ -4,7 +4,8 @@
   "description": "",
   "main": "build/app.js",
   "scripts": {
-    "start": "tsc && nodemon  build/app.js",
+    "start": "tsc && nodemon  build/app.js",    
+    "dev": "tsc && nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "clay k",

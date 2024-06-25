@@ -26,16 +26,24 @@ Mongodb options you can use a local or a remote database:
 
 ## Endponts:
 
-### User:
+### Event:
 
-- create user : localhost:3000/user/
-- get user : localhost:3000/user/userId
-- update user : localhost:3000/user/
+- create event : localhost:5000/event/
+- get event : localhost:5000/event/eventId
+- get all event : localhost:5000/event/
+-delete event : localhost:5000/event/eventId (delete method)
+- update event : localhost:5000/event/
 
-### Posts:
 
-- create post : localhost:3000/post/
-- get all post : localhost:3000/post/
-- get post : localhost:3000/post/postId
-- delete post : localhost:3000/post/postId
-- update post : localhost:3000/post/
+Hello EveryOne
+
+This system is a basic system which allows user to create, read, update and delete events.
+
+I have used NodeJS, ExpressJS, Typescript and MongoDB to achieve to functionality.
+
+The Schema i have used is as provided by you.
+
+I have used Array And Javascript Objects as basic datastructures.
+
+Feel free to pull the the code and refer it.
+

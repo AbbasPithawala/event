@@ -14,9 +14,6 @@ router.get("/", EventController.getEventAll);
 //update event
 router.patch("/", EventController.updateEvent);
 
-// fetch filtere event
-router.get("/filteredEvent/", EventController.getFilteredEvent);
-
 // delete Event
 router.delete("/:eventId", EventController.deleteEvent)
 
